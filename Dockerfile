@@ -18,9 +18,9 @@ RUN python -m venv /py && \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     /py/bin/pip install flake8 && \
-    'if [ $DEV= "true" ]; \
+    if [ $DEV= "true" ]; \
         then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
-    fi' && \
+    fi && \
     rm -rf /tmp && \
     apk del .tmp-build-deps && \
     adduser \
